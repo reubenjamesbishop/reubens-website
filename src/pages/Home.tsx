@@ -9,7 +9,7 @@ import {
   Group,
   Button,
   Divider,
-  Accordion,
+  Space,
 } from "@mantine/core";
 
 import meImage from "../assets/me.png";
@@ -19,22 +19,43 @@ import projects from "../assets/oc-growing.svg";
 import contact from "../assets/oc-lighthouse.svg";
 
 import SectionTitle from "../components/SectionTitle/SectionTitle";
-import WorkAccordion from "../components/WorkAccordion/CurrentWorkAccordion";
 import CurrentWorkAccordion from "../components/WorkAccordion/CurrentWorkAccordion";
 import PreviousWorkAccordion from "../components/WorkAccordion/PreviousWorkAccordion";
+import {
+  IconDownload,
+  IconMail,
+  IconArrowNarrowRight,
+  IconBrandLinkedin,
+  IconBrandGithub,
+} from "@tabler/icons-react";
+
+import Project from "../components/Project/Project";
 
 function PageIntro() {
-  const PERSONAL_STATEMENT =
-    "I'm a product-minded software engineer with a passion for designing and building great products, and work with delighful people.";
-
   return (
     <Stack>
-      <Text>{PERSONAL_STATEMENT}</Text>
+      <Text>
+        I'm a product-minded software engineer with a passion for designing and
+        building great products, and work with delighful people. I have a
+        passion for full stack softwar engineering, data science, product
+        management and UI/UX.
+      </Text>
+      <Space />
       <Group>
-        <Button variant="filled" color="black" radius={"xl"}>
+        <Button
+          variant="filled"
+          color="black"
+          radius={"xl"}
+          rightSection={<IconArrowNarrowRight size={20} />}
+        >
           Check out my projects
         </Button>
-        <Button variant="outline" color="black" radius={"xl"}>
+        <Button
+          variant="outline"
+          color="black"
+          radius={"xl"}
+          rightSection={<IconDownload size={20} />}
+        >
           Download my resume
         </Button>
       </Group>
@@ -45,7 +66,7 @@ function PageIntro() {
 export default function Home() {
   return (
     <>
-      <Container size={"xl"} pt="xl" style={{ border: "0px solid red" }}>
+      <Container size={"lg"} pt="xl" style={{ border: "0px solid red" }}>
         <Stack>
           <Grid>
             <Grid.Col span={5}>
@@ -81,11 +102,54 @@ export default function Home() {
                 <Divider my="xl" />
                 <SectionTitle title="Experience" image={experience} />
                 <CurrentWorkAccordion />
+                <Space />
                 <PreviousWorkAccordion />
                 <Divider my="xl" />
                 <SectionTitle title="My projects" image={projects} />
+                <Project
+                  title="Kwack"
+                  subtitle="Medical student study platform"
+                  description="Kwack is a study platform that helps medical students prepare for their
+                  final year major Objective Structured Clinical Reasoning Examinations (OSCEs). 
+                  Students can create, run and share interactive OSCE cases with each other, or run their cases against
+                  an AI studdy buddy."
+                />
+                <Space h="xl" />
+                <Project
+                  title="Freight Analysis Dashboard"
+                  subtitle="GovHack National Hackathon Winner, 2023"
+                  description="The freight analysis dashboard was a submission to the 2023 GovHack hackathon, 
+                  which was aimed at solving problems in the trucking and freighting industry. As part of a team of 4, 
+                  we created an interactive planning tool using Python + Streamlit, and entered three sub-challenges 
+                  (winning one, and coming runner up in another two)."
+                />
                 <Divider my="xl" />
                 <SectionTitle title="Contact" image={contact} />
+                <Space h="xl" />
+                <Button
+                  variant="outline"
+                  color="black"
+                  radius={"xl"}
+                  rightSection={<IconMail size={20} />}
+                >
+                  Send me an Email
+                </Button>
+                <Button
+                  variant="outline"
+                  color="black"
+                  radius={"xl"}
+                  rightSection={<IconBrandLinkedin size={20} />}
+                >
+                  Add me on Linked In
+                </Button>
+                <Button
+                  variant="outline"
+                  color="black"
+                  radius={"xl"}
+                  rightSection={<IconBrandGithub size={20} />}
+                >
+                  Check out my GitHub
+                </Button>
               </Stack>
             </Grid.Col>
           </Grid>

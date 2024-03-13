@@ -10,6 +10,7 @@ import {
   Button,
   Divider,
   Space,
+  Center,
 } from "@mantine/core";
 
 import meImage from "../assets/me.png";
@@ -36,29 +37,36 @@ function PageIntro() {
     <Stack>
       <Text>
         I'm a product-minded software engineer with a passion for designing and
-        building great products, and work with delighful people. I have a
-        passion for full stack softwar engineering, data science, product
-        management and UI/UX.
+        building great products, and working with delightful people. I have a
+        passion for full stack software engineering and product management, and
+        have spent lots of time working on data engineering and data science
+        projects. I am also a keen UI/UX enthusiast.
       </Text>
       <Space />
-      <Group>
-        <Button
-          variant="filled"
-          color="black"
-          radius={"xl"}
-          rightSection={<IconArrowNarrowRight size={20} />}
-        >
-          Check out my projects
-        </Button>
-        <Button
-          variant="outline"
-          color="black"
-          radius={"xl"}
-          rightSection={<IconDownload size={20} />}
-        >
-          Download my resume
-        </Button>
-      </Group>
+      <Grid>
+        <Grid.Col span={{ base: 12, md: 6 }}>
+          <Button
+            variant="filled"
+            color="black"
+            radius={"xl"}
+            fullWidth
+            rightSection={<IconArrowNarrowRight size={20} />}
+          >
+            Check out my projects
+          </Button>
+        </Grid.Col>
+        <Grid.Col span={{ base: 12, md: 6 }}>
+          <Button
+            variant="outline"
+            color="black"
+            radius={"xl"}
+            fullWidth
+            rightSection={<IconDownload size={20} />}
+          >
+            Download my resume
+          </Button>
+        </Grid.Col>
+      </Grid>
     </Stack>
   );
 }
@@ -69,8 +77,8 @@ export default function Home() {
       <Container size={"lg"} pt="xl" style={{ border: "0px solid red" }}>
         <Stack>
           <Grid>
-            <Grid.Col span={5}>
-              <Stack
+            <Grid.Col span={{ base: 12, md: 5 }}>
+              <Box
                 p="xl"
                 style={{
                   position: "sticky",
@@ -78,25 +86,29 @@ export default function Home() {
                   border: "0px solid blue",
                 }}
               >
-                <Box style={{ border: "0px solid red" }}>
-                  <Title order={3}>Hi,</Title>
-                  <Title order={1}>I'm Reuben.</Title>
-                </Box>
-                <Box style={{ border: "0px solid blue", width: 200 }}>
-                  <Image
-                    style={{ border: "0px solid red" }}
-                    h="100"
-                    width={"auto"}
-                    fit="contain"
-                    src={squiggleArrow}
-                  />
-                </Box>
-                <Box style={{ border: "0px solid blue", width: 200 }}>
-                  <Image fit="contain" radius="md" src={meImage} />
-                </Box>
-              </Stack>
+                <Center>
+                  <Stack>
+                    <Box style={{ border: "0px solid red" }}>
+                      <Title order={3}>Hi,</Title>
+                      <Title order={1}>I'm Reuben.</Title>
+                    </Box>
+                    <Box style={{ border: "0px solid blue", width: 200 }}>
+                      <Image
+                        style={{ border: "0px solid red" }}
+                        h="100"
+                        width={"auto"}
+                        fit="contain"
+                        src={squiggleArrow}
+                      />
+                    </Box>
+                    <Box style={{ border: "0px solid blue", width: 200 }}>
+                      <Image fit="contain" radius="md" src={meImage} />
+                    </Box>
+                  </Stack>
+                </Center>
+              </Box>
             </Grid.Col>
-            <Grid.Col span={7}>
+            <Grid.Col span={{ base: 12, md: 7 }}>
               <Stack p="xl">
                 <PageIntro />
                 <Divider my="xl" />
@@ -153,6 +165,7 @@ export default function Home() {
               </Stack>
             </Grid.Col>
           </Grid>
+          <Space h="xl" />
         </Stack>
       </Container>
     </>

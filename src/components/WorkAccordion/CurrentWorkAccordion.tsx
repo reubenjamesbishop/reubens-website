@@ -1,4 +1,4 @@
-import { Group, Avatar, Text, Accordion, Title } from "@mantine/core";
+import { Group, Text, Accordion } from "@mantine/core";
 
 const charactersList = [
   {
@@ -12,7 +12,7 @@ const charactersList = [
 
 interface AccordionLabelProps {
   label: string;
-  image: string;
+  // image: string;
   description: string;
 }
 

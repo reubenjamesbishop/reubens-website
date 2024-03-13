@@ -1,14 +1,22 @@
 import { Menu, Group, Center, Burger, Container } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { IconChevronDown } from "@tabler/icons-react";
-// import { MantineLogo } from "@mantinex/mantine-logo";
 import classes from "./HeaderMenu.module.css";
 
 const links = [
   { link: "/", label: "Home" },
   { link: "/", label: "Projects" },
   { link: "/", label: "Blog" },
-  { link: "/", label: "Contact" },
+  {
+    link: "/",
+    label: "Contact",
+    links: [
+      { link: "/docs", label: "Documentation" },
+      { link: "/resources", label: "Resources" },
+      { link: "/community", label: "Community" },
+      { link: "/blog", label: "Blog" },
+    ],
+  },
 ];
 
 export default function HeaderMenu() {

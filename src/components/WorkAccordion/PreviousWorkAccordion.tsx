@@ -1,4 +1,4 @@
-import { Group, Avatar, Title, Text, Accordion } from "@mantine/core";
+import { Group, Text, Accordion } from "@mantine/core";
 
 const charactersList = [
   {
@@ -28,7 +28,7 @@ const charactersList = [
 
 interface AccordionLabelProps {
   label: string;
-  image: string;
+  // image: string;
   description: string;
 }
 
@@ -64,7 +64,7 @@ export default function PreviousWorkAccordion() {
 
   return (
     <>
-      <Text order={4}>Have previously been @</Text>
+      <Text>Have previously been @</Text>
       <Accordion chevronPosition="right" variant="contained">
         {items}
       </Accordion>

@@ -84,6 +84,7 @@ export default function Home() {
   return (
     <>
       <Container size={"lg"} pt="xl" style={{ border: "0px solid red" }}>
+        <Space h="xl" />
         <Stack>
           <Grid>
             <Grid.Col span={{ base: 12, md: 5 }}>

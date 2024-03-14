@@ -11,6 +11,7 @@ import {
   Space,
   Center,
   Indicator,
+  Group,
 } from "@mantine/core";
 
 import meImage from "../assets/me.png";
@@ -34,6 +35,7 @@ import {
 import Project from "../components/Project/Project";
 import EducationAccordion from "../components/EducationAccordion/EducationAccordion";
 import CertificateAccordion from "../components/EducationAccordion/CertificateAccordion";
+import TechnologyPill from "../components/TechnologyPill/TechnologyPill";
 
 import resume_link from "../assets/ReubenJamesBishopCV_2024.pdf";
 
@@ -135,6 +137,7 @@ export default function Home() {
                 <CurrentWorkAccordion />
                 <Space />
                 <PreviousWorkAccordion />
+                <Space />
                 <Divider my="xl" />
                 <SectionTitle
                   title="My projects"
@@ -160,6 +163,39 @@ export default function Home() {
                   we created an interactive planning tool using Python + Streamlit, and entered three sub-challenges 
                   (winning one, and coming runner up in another two)."
                 />
+                <Space h="xl" />
+                <Project
+                  title="Puzzle of the Day Solver"
+                  subtitle="Puzzle solving Webapp"
+                  link="https://medium.com/@reubenjamesbishop/taking-all-of-the-fun-out-of-puzzles-with-python-flask-a81f001a6cb0"
+                  description="A simple web application that automatically calculated the optimal solution to the DragonFjord 'Puzzle of the Day'. 
+                  Created app with React + Flask, and wrote up an accompanying blog post."
+                />
+                <Divider my="xl" />
+                <SectionTitle
+                  title="My Favourite Tech"
+                  image={""}
+                  // subtitle="Technologies that I like to work with"
+                />
+                <Text c="dimmed">Software Dev</Text>
+                <Group gap={"xs"}>
+                  <TechnologyPill thing="Python" />
+                  <TechnologyPill thing="JavaScript / TypeScript" />
+                  <TechnologyPill thing="SQL (PostgreSQL)" />
+                  <TechnologyPill thing="React" />
+                  <TechnologyPill thing="HTML + CSS" />
+                  <TechnologyPill thing="AWS" />
+                </Group>
+                <Text c="dimmed">Data Engineering</Text>
+                <Group gap={"xs"}>
+                  <TechnologyPill thing="Snowflake" />
+                  <TechnologyPill thing="Dagster" />
+                  <TechnologyPill thing="DBT" />
+                </Group>
+                <Text c="dimmed">Other stuff</Text>
+                <Group gap={"xs"}>
+                  <TechnologyPill thing="Figma" />
+                </Group>
                 <Divider my="xl" />
                 <SectionTitle
                   title="Education"

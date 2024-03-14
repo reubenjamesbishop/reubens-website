@@ -4,12 +4,14 @@ const charactersList = [
   {
     id: "aws-cf01",
     label: "AWS Cloud Practitioner (CLF-01)",
+    description: "",
     content: "Fundamentals of cloud computing on AWS.",
   },
 
   {
     id: "scrum-master",
     label: "Certified Scrum Master (CSM)",
+    description: "",
     content:
       "Completed a 3 day certification in Agile / Scrum master stuff. Was pretty interesting. Learned how to run Scrum teams.",
   },

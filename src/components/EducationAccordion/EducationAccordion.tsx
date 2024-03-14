@@ -4,7 +4,7 @@ const charactersList = [
   {
     id: "unsw-grad-cert",
     label: "Graduate Certificate in Data Science",
-    description: "University of New South Whales | GPA: 7.00/7.00",
+    description: "UNSW | GPA: 7.00/7.00",
     content:
       "I'm currently working through a Graduate Certifcate of Data Science at while working full-time. I've learned about advanced statistics concepts, advanced SQL concepts and business intelligence with Tablaeu.",
   },
@@ -12,7 +12,7 @@ const charactersList = [
   {
     id: "adelaide-uni-cs",
     label: "Bachelor of Mathematical and Computer Sciences",
-    description: "The University of Adelaide | GPA: 6.25/7.00",
+    description: "Adelaide University | GPA: 6.25/7.00",
     content:
       "I did a bachelor of Mathematical and Computer Science (majoring in Computer Science). I got to do lots of courses in Artifical Intelligence, Computer Vision and Statistical Machine Learning.",
   },
@@ -20,7 +20,7 @@ const charactersList = [
   {
     id: "adelaide-uni-eng",
     label: "Bachelor (Honours) of Mechanical Engineering",
-    description: "The University of Adelaide | GPA: 6.25/7.00",
+    description: "Adelaide University | GPA: 6.25/7.00",
     content:
       "I did an Honours degree in Mechanical Engineering, with a research project in magnetostrictive energy harvesters. I was also on the Formula SAE, where I got to help out and build an electric formula-style race car.",
   },

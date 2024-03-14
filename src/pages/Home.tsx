@@ -6,7 +6,6 @@ import {
   Title,
   Text,
   Image,
-  Group,
   Button,
   Divider,
   Space,
@@ -31,6 +30,10 @@ import {
 } from "@tabler/icons-react";
 
 import Project from "../components/Project/Project";
+import EducationAccordion from "../components/EducationAccordion/EducationAccordion";
+import CertificateAccordion from "../components/EducationAccordion/CertificateAccordion";
+
+import resume_link from "../assets/ReubenJamesBishopCV_2024.pdf";
 
 function PageIntro() {
   return (
@@ -57,6 +60,8 @@ function PageIntro() {
         </Grid.Col>
         <Grid.Col span={{ base: 12, md: 6 }}>
           <Button
+            component="a"
+            href={resume_link}
             variant="outline"
             color="black"
             radius={"xl"}
@@ -112,15 +117,24 @@ export default function Home() {
               <Stack p="xl">
                 <PageIntro />
                 <Divider my="xl" />
-                <SectionTitle title="Experience" image={experience} />
+                <SectionTitle
+                  title="Experience"
+                  subtitle="My work history in all it's glory"
+                  image={experience}
+                />
                 <CurrentWorkAccordion />
                 <Space />
                 <PreviousWorkAccordion />
                 <Divider my="xl" />
-                <SectionTitle title="My projects" image={projects} />
+                <SectionTitle
+                  title="My projects"
+                  image={projects}
+                  subtitle="A couple of interesting things i've worked on"
+                />
                 <Project
                   title="Kwack"
                   subtitle="Medical student study platform"
+                  link="https://kwack-app.vercel.app/" // TODO: update kwack link
                   description="Kwack is a study platform that helps medical students prepare for their
                   final year major Objective Structured Clinical Reasoning Examinations (OSCEs). 
                   Students can create, run and share interactive OSCE cases with each other, or run their cases against
@@ -130,18 +144,34 @@ export default function Home() {
                 <Project
                   title="Freight Analysis Dashboard"
                   subtitle="GovHack National Hackathon Winner, 2023"
+                  link="https://github.com/reubenjamesbishop/govhack23"
                   description="The freight analysis dashboard was a submission to the 2023 GovHack hackathon, 
                   which was aimed at solving problems in the trucking and freighting industry. As part of a team of 4, 
                   we created an interactive planning tool using Python + Streamlit, and entered three sub-challenges 
                   (winning one, and coming runner up in another two)."
                 />
                 <Divider my="xl" />
-                <SectionTitle title="Contact" image={contact} />
+                <SectionTitle
+                  title="Education"
+                  image={experience}
+                  subtitle="My degrees and certifications"
+                />
+                <EducationAccordion />
+                <Space />
+                <CertificateAccordion />
+                <Divider my="xl" />
+                <SectionTitle
+                  title="Contact"
+                  image={contact}
+                  subtitle="Get in touch, I'd love to hear from you!"
+                />
                 <Space h="xl" />
                 <Button
                   variant="outline"
                   color="black"
                   radius={"xl"}
+                  component="a"
+                  href="mailto:reubenjamesbishop@gmail.com"
                   rightSection={<IconMail size={20} />}
                 >
                   Send me an Email
@@ -150,6 +180,8 @@ export default function Home() {
                   variant="outline"
                   color="black"
                   radius={"xl"}
+                  component="a"
+                  href="https://www.linkedin.com/in/reubenbishop/"
                   rightSection={<IconBrandLinkedin size={20} />}
                 >
                   Add me on Linked In
@@ -158,6 +190,8 @@ export default function Home() {
                   variant="outline"
                   color="black"
                   radius={"xl"}
+                  component="a"
+                  href="https://www.github.com/reubenjamesbishop"
                   rightSection={<IconBrandGithub size={20} />}
                 >
                   Check out my GitHub

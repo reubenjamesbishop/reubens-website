@@ -7,7 +7,7 @@ interface ProjectProps {
   title: string;
   subtitle: string;
   description: string;
-  //   link: string;
+  link?: string;
 }
 
 export default function Project(props: ProjectProps) {
@@ -22,6 +22,8 @@ export default function Project(props: ProjectProps) {
         <Text c="dimmed">{props.description}</Text>
         <Space h="xl" />
         <Button
+          component="a"
+          href={props?.link}
           variant="outline"
           color="black"
           radius={"xl"}

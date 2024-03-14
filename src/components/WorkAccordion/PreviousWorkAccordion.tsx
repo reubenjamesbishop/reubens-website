@@ -6,7 +6,7 @@ const charactersList = [
     label: "Lockheed Martin",
     description: "Software Engineer Associate",
     content:
-      "Bender Bending Rodríguez, (born September 4, 2996), designated Bending Unit 22, and commonly known as Bender, is a bending unit created by a division of MomCorp in Tijuana, Mexico, and his serial number is 2716057. His mugshot id number is 01473. He is Fry's best friend.",
+      "I started at Lockheed Martin as a software engineering intern, and then moved into an Associate Engineering role. I was working on the weapons team as part of the Future Submarine Program.",
   },
 
   {
@@ -14,7 +14,7 @@ const charactersList = [
     label: "MaxMine",
     description: "Undergraduate Data Analyst",
     content:
-      "Carol Miller (born January 30, 2880), better known as Mom, is the evil chief executive officer and shareholder of 99.7% of Momcorp, one of the largest industrial conglomerates in the universe and the source of most of Earth's robots. She is also one of the main antagonists of the Futurama series.",
+      "I worked at MaxMine part-time while studying at Uni. I got to work on a range of projects based around mining analytics, including some case studies and topology mapping software.",
   },
 
   {
@@ -22,7 +22,7 @@ const charactersList = [
     label: "Micro-X",
     description: "Mechanical Engineering Intern",
     content:
-      "Homer Jay Simpson (born May 12) is the main protagonist and one of the five main characters of The Simpsons series(or show). He is the spouse of Marge Simpson and father of Bart, Lisa and Maggie Simpson.",
+      "I did a four month internship with Micro-X while studying for my Mechanical Engineering degree. At Micro-X, I got to work on a few projects that involved some mechanical design work and hands on mechnical testing of cutting-edge X-Ray equipment. ",
   },
 ];
 

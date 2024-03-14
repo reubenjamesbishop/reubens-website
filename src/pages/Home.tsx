@@ -10,6 +10,7 @@ import {
   Divider,
   Space,
   Center,
+  Indicator,
 } from "@mantine/core";
 
 import meImage from "../assets/me.png";
@@ -17,6 +18,7 @@ import squiggleArrow from "../assets/squiggleArrow.png";
 import experience from "../assets/oc-on-the-laptop.svg";
 import projects from "../assets/oc-growing.svg";
 import contact from "../assets/oc-lighthouse.svg";
+import education from "../assets/nc-scale-a-process.svg";
 
 import SectionTitle from "../components/SectionTitle/SectionTitle";
 import CurrentWorkAccordion from "../components/WorkAccordion/CurrentWorkAccordion";
@@ -49,26 +51,26 @@ function PageIntro() {
       <Grid>
         <Grid.Col span={{ base: 12, md: 6 }}>
           <Button
-            variant="filled"
-            color="black"
-            radius={"xl"}
-            fullWidth
-            rightSection={<IconArrowNarrowRight size={20} />}
-          >
-            Check out my projects
-          </Button>
-        </Grid.Col>
-        <Grid.Col span={{ base: 12, md: 6 }}>
-          <Button
             component="a"
             href={resume_link}
-            variant="outline"
+            variant="filled"
             color="black"
             radius={"xl"}
             fullWidth
             rightSection={<IconDownload size={20} />}
           >
             Download my resume
+          </Button>
+        </Grid.Col>
+        <Grid.Col span={{ base: 12, md: 6 }}>
+          <Button
+            variant="outline"
+            color="black"
+            radius={"xl"}
+            fullWidth
+            rightSection={<IconArrowNarrowRight size={20} />}
+          >
+            Check out my projects
           </Button>
         </Grid.Col>
       </Grid>
@@ -106,9 +108,17 @@ export default function Home() {
                         src={squiggleArrow}
                       />
                     </Box>
-                    <Box style={{ border: "0px solid blue", width: 200 }}>
-                      <Image fit="contain" radius="md" src={meImage} />
-                    </Box>
+                    <Indicator
+                      processing={true}
+                      position="bottom-start"
+                      size={20}
+                      color="green"
+                      disabled={true}
+                    >
+                      <Box style={{ border: "0px solid blue", width: 200 }}>
+                        <Image fit="contain" radius="md" src={meImage} />
+                      </Box>
+                    </Indicator>
                   </Stack>
                 </Center>
               </Box>
@@ -153,7 +163,7 @@ export default function Home() {
                 <Divider my="xl" />
                 <SectionTitle
                   title="Education"
-                  image={experience}
+                  image={education}
                   subtitle="My degrees and certifications"
                 />
                 <EducationAccordion />

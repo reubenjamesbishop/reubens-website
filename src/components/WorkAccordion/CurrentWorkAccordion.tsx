@@ -3,8 +3,8 @@ import { Group, Text, Accordion } from "@mantine/core";
 const charactersList = [
   {
     id: "iO Energy",
-    label: "iO Energy (Jan 2022 - Present)",
-    description: "Software Engineer (Team Lead)",
+    label: "iO Energy",
+    description: "Jan 2022 - Present | Software Engineer (Team Lead)",
     content: `
     Currently working as the software team lead at the clean-energy startup, iO Energy.
     I was the first full-time engineer, and am responsible for leading the software engineering capabilities, and managing a team of 3 full time engineers.

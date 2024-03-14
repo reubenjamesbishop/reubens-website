@@ -4,7 +4,7 @@ const charactersList = [
   {
     id: "Lockheed Martin",
     label: "Lockheed Martin",
-    description: "Software Engineer Associate",
+    description: "Sep 2020 - Jan 2022 | Software Engineer Associate",
     content:
       "I started at Lockheed Martin as a software engineering intern, and then moved into an Associate Engineering role. I was working on the weapons team as part of the Future Submarine Program.",
   },
@@ -12,7 +12,7 @@ const charactersList = [
   {
     id: "Maxmine",
     label: "MaxMine",
-    description: "Undergraduate Data Analyst",
+    description: "Jun 2019 - Feb 2021 | Undergraduate Data Analyst",
     content:
       "I worked at MaxMine part-time while studying at Uni. I got to work on a range of projects based around mining analytics, including some case studies and topology mapping software.",
   },
@@ -20,7 +20,7 @@ const charactersList = [
   {
     id: "Micro-X",
     label: "Micro-X",
-    description: "Mechanical Engineering Intern",
+    description: "Nov 2018 - Feb 2019 | Mechanical Engineering Intern",
     content:
       "I did a four month internship with Micro-X while studying for my Mechanical Engineering degree. At Micro-X, I got to work on a few projects that involved some mechanical design work and hands on mechnical testing of cutting-edge X-Ray equipment. ",
   },

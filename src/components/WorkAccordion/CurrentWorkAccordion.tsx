@@ -7,9 +7,9 @@ const charactersList = [
     description: "Software Engineer (Team Lead)",
     content: `
     Currently working as the software team lead at the clean-energy startup, iO Energy.
-    I was the first full-time engineer, and am responsible for leading the software engineering capabilities, and managing a team of 3 full time engineers.
-    My work primarily revolves around developing our cloud based retail operations platform, which we use to manage and simplify our entire energy retail function, 
-    but I also work on data engineering, data science and UI/UX projects.
+    I was the first full-time engineer, and am responsible for leading the software engineering capabilities, and managing our software team.
+    My work primarily revolves around developing our cloud-based retail operations platform, which we use to manage and simplify our energy retail function, 
+    but I also get to work on data engineering, data science and UI/UX projects.
     `,
   },
 ];

@@ -44,10 +44,11 @@ function PageIntro() {
     <Stack>
       <Text>
         I'm a product-minded software engineer with a passion for designing and
-        building great products, and working with delightful people. I have a
-        passion for full stack software engineering and product management, and
-        have spent lots of time working on data engineering and data science
-        projects. I am also a keen UI/UX enthusiast.
+        building great products, and working with delightful people. I have
+        worked mainly as a full-stack software engineer for the last couple of
+        years, but I have have been able to ramp up in other interesting areas
+        including data science, data engineering, UI/UX design and product
+        management.
       </Text>
       <Space />
       <Grid>

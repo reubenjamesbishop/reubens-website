@@ -22,7 +22,7 @@ const charactersList = [
     label: "Micro-X",
     description: "Mechanical Engineering Intern",
     content:
-      "I did a four month internship with Micro-X while studying for my Mechanical Engineering degree. At Micro-X, I got to work on a few projects that involved some mechanical design work and hands on mechnical testing of cutting-edge X-Ray equipment. ",
+      "I did a four month internship with Micro-X while studying for my Mechanical Engineering degree. At Micro-X, I got to work on a few projects that involved some mechanical design work and hands on mechanical testing of cutting-edge X-Ray equipment. ",
   },
 ];
 

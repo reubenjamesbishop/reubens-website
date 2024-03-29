@@ -153,7 +153,7 @@ export default function Home() {
                   description="Kwack is a study platform that helps medical students prepare for their
                   final year major Objective Structured Clinical Reasoning Examinations (OSCEs). 
                   Students can create, run and share interactive OSCE cases with each other, or run their cases against
-                  an AI studdy buddy."
+                  an AI study buddy."
                 />
                 <Space h="xl" />
                 <Project

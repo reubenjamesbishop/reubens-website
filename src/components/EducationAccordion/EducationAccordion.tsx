@@ -6,7 +6,7 @@ const charactersList = [
     label: "Graduate Certificate in Data Science",
     description: "UNSW | GPA: 7.00/7.00",
     content:
-      "I'm currently working through a Graduate Certifcate of Data Science at while working full-time. I've learned about advanced statistics concepts, advanced SQL concepts and business intelligence with Tablaeu.",
+      "I'm currently working through a Graduate Certifcate of Data Science at while working full-time. I've learned about advanced statistics concepts, advanced SQL concepts and business intelligence with Tableau.",
   },
 
   {

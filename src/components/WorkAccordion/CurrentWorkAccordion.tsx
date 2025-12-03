@@ -2,14 +2,12 @@ import { Group, Text, Accordion } from "@mantine/core";
 
 const charactersList = [
   {
-    id: "iO Energy",
-    label: "iO Energy",
-    description: "Software Engineer (Team Lead)",
+    id: "Cortex (acquired by Schneider Electric)",
+    label: "Cortex (acquired by Schneider Electric)",
+    description: "Senior Software Engineer",
     content: `
-    Currently working as the software team lead at the clean-energy startup, iO Energy.
-    I was the first full-time engineer, and am responsible for leading the software engineering capabilities, and managing our software team.
-    My work primarily revolves around developing our cloud-based retail operations platform, which we use to manage and simplify our energy retail function, 
-    but I also get to work on data engineering, data science and UI/UX projects.
+    Worked as a senior software engineer at Cortex, a clean-energy startup that was later acquired by Schneider Electric.
+    Developed software solutions to optimize energy consumption and integrate renewable energy sources.
     `,
   },
 ];

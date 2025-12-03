@@ -1,6 +1,13 @@
 import { Group, Text, Accordion } from "@mantine/core";
 
 const charactersList = [
+{
+    id: "iO Energy",
+    label: "iO Energy",
+    description: "CTO / Lead Software Engineer",
+    content:
+    "I was the first full-time engineer, and am responsible for leading the software engineering capabilities, and managing our software team.\n    My work primarily revolves around developing our cloud-based retail operations platform, which we use to manage and simplify our energy retail function, \n    but I also get to work on data engineering, data science and UI/UX projects.",
+},
   {
     id: "Lockheed Martin",
     label: "Lockheed Martin",

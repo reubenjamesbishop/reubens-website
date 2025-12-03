@@ -37,7 +37,7 @@ import EducationAccordion from "../components/EducationAccordion/EducationAccord
 import CertificateAccordion from "../components/EducationAccordion/CertificateAccordion";
 import TechnologyPill from "../components/TechnologyPill/TechnologyPill";
 
-import resume_link from "../assets/ReubenJamesBishopCV_2024.pdf";
+import resume_link from "../assets/reuben_bishop_cv.pdf";
 
 function PageIntro() {
   return (

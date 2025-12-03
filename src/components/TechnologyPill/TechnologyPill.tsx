@@ -4,7 +4,7 @@ interface TechnologyPillProps {
   thing: string;
 }
 
-export default function TechnologyPill(props: TechnologyPillProps) {
+export default function TechnologyPill({ thing }: TechnologyPillProps) {
   return (
     <Box
       px={"lg"}
@@ -14,7 +14,8 @@ export default function TechnologyPill(props: TechnologyPillProps) {
         borderRadius: "100px",
       }}
     >
-      <Text size="sm">{props.thing}</Text>
+      <Text size="sm">{thing}</Text>
     </Box>
   );
 }
+

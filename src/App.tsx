@@ -1,5 +1,4 @@
 import { AppShell, MantineProvider } from "@mantine/core";
-import "./App.css";
 import Home from "./pages/Home";
 // import HeaderMenu from "./components/Header/HeaderMenu";
 

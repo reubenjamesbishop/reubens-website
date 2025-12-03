@@ -1,30 +1,70 @@
-# React + TypeScript + Vite
+# Reuben's Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple static React website built with Mantine UI components to host my portfolio and resume. This site is deployed on GitHub Pages.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **Mantine** - Component library
+- **GitHub Pages** - Hosting
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Prerequisites
 
-- Configure the top-level `parserOptions` property like this:
+- Node.js (v16 or higher)
+- npm
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/reubenjamesbishop/reubens-website.git
+cd reubens-website
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Install dependencies:
+```bash
+npm install
+```
+
+### Development
+
+Run the development server:
+```bash
+npm run dev
+```
+
+The site will be available at `http://localhost:5173`
+
+### Building
+
+Build the project for production:
+```bash
+npm run build
+```
+
+Preview the production build locally:
+```bash
+npm run preview
+```
+
+### Deployment
+
+Deploy to GitHub Pages:
+```bash
+npm run deploy
+```
+
+This will build the project and push the `dist` folder to the `gh-pages` branch.
+
+## Project Structure
+
+- `src/` - Source code
+  - `components/` - Reusable React components
+  - `pages/` - Page components
+  - `assets/` - Images and static files
+- `public/` - Public assets
+- `dist/` - Production build output (generated)

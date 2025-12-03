@@ -84,7 +84,7 @@ function PageIntro() {
 export default function Home() {
   return (
     <>
-      <Container size={"lg"} pt="xl" style={{ border: "0px solid red" }}>
+      <Container size={"lg"} pt="xl">
         <Space h="xl" />
         <Stack>
           <Grid>
@@ -94,18 +94,16 @@ export default function Home() {
                 style={{
                   position: "sticky",
                   top: 80,
-                  border: "0px solid blue",
                 }}
               >
                 <Center>
                   <Stack>
-                    <Box style={{ border: "0px solid red" }}>
+                    <Box>
                       <Title order={3}>Hi,</Title>
                       <Title order={1}>I'm Reuben.</Title>
                     </Box>
-                    <Box style={{ border: "0px solid blue", width: 200 }}>
+                    <Box style={{ width: 200 }}>
                       <Image
-                        style={{ border: "0px solid red" }}
                         h="100"
                         width={"auto"}
                         fit="contain"
@@ -119,7 +117,7 @@ export default function Home() {
                       color="green"
                       disabled={true}
                     >
-                      <Box style={{ border: "0px solid blue", width: 200 }}>
+                      <Box style={{ width: 200 }}>
                         <Image fit="contain" radius="md" src={meImage} />
                       </Box>
                     </Indicator>
@@ -149,7 +147,7 @@ export default function Home() {
                 <Project
                   title="Kwack"
                   subtitle="Medical student study platform"
-                  link="https://kwack-app.vercel.app/" // TODO: update kwack link
+                  link="https://kwack-app.vercel.app/"
                   description="Kwack is a study platform that helps medical students prepare for their
                   final year major Objective Structured Clinical Reasoning Examinations (OSCEs).
                   Students can create, run and share interactive OSCE cases with each other, or run their cases against

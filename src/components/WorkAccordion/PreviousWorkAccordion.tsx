@@ -28,7 +28,6 @@ const charactersList = [
 
 interface AccordionLabelProps {
   label: string;
-  // image: string;
   description: string;
 }
 

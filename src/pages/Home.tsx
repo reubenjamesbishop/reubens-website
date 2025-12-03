@@ -43,9 +43,9 @@ function PageIntro() {
   return (
     <Stack>
       <Text>
-        I'm a product-minded software engineer with a passion for designing and
-        building great products, and working with delightful people. I have
-        worked mainly as a full-stack software engineer for the last couple of
+        Hello! I'm Reuben - a product-minded software engineer with a passion for designing and
+        building great products (and working with delightful people). I have
+        worked mainly as a full-stack software engineer for the last few
         years, but I have have been able to ramp up in other interesting areas
         including data science, data engineering, UI/UX design and product
         management.
@@ -67,6 +67,8 @@ function PageIntro() {
         </Grid.Col>
         <Grid.Col span={{ base: 12, md: 6 }}>
           <Button
+            component="a"
+            href={"https://github.com/reubenjamesbishop"}
             variant="outline"
             color="black"
             radius={"xl"}
@@ -130,8 +132,8 @@ export default function Home() {
                 <PageIntro />
                 <Divider my="xl" />
                 <SectionTitle
-                  title="Experience"
-                  subtitle="My work history in all it's glory"
+                  title="My Experience"
+                  subtitle="Cool jobs I've had the pleasure of working in"
                   image={experience}
                 />
                 <CurrentWorkAccordion />
@@ -147,7 +149,7 @@ export default function Home() {
                 <Project
                   title="Kwack"
                   subtitle="Medical student study platform"
-                  link="https://kwack-app.vercel.app/"
+                  link="https://kwack.io"
                   description="Kwack is a study platform that helps medical students prepare for their
                   final year major Objective Structured Clinical Reasoning Examinations (OSCEs).
                   Students can create, run and share interactive OSCE cases with each other, or run their cases against
@@ -177,24 +179,27 @@ export default function Home() {
                   image={""}
                   // subtitle="Technologies that I like to work with"
                 />
-                <Text c="dimmed">Software Dev</Text>
+                <Text c="dimmed">Languages I like</Text>
                 <Group gap={"xs"}>
                   <TechnologyPill thing="Python" />
-                  <TechnologyPill thing="JavaScript / TypeScript" />
-                  <TechnologyPill thing="SQL (PostgreSQL)" />
-                  <TechnologyPill thing="React" />
-                  <TechnologyPill thing="HTML + CSS" />
-                  <TechnologyPill thing="AWS" />
+                  <TechnologyPill thing="TypeScript" />
+                  <TechnologyPill thing="Go" />
+                  <TechnologyPill thing="SQL" />
                 </Group>
-                <Text c="dimmed">Data Engineering</Text>
+                <Text c="dimmed">Frameworks and Tech I love to use</Text>
                 <Group gap={"xs"}>
                   <TechnologyPill thing="Snowflake" />
                   <TechnologyPill thing="Dagster" />
                   <TechnologyPill thing="DBT" />
+                  <TechnologyPill thing="React" />
+                  <TechnologyPill thing="AWS" />
+                  <TechnologyPill thing="Docker" />
+                  <TechnologyPill thing="Terraform" />
                 </Group>
                 <Text c="dimmed">Other stuff</Text>
                 <Group gap={"xs"}>
                   <TechnologyPill thing="Figma" />
+                  <TechnologyPill thing="Notion" />
                 </Group>
                 <Divider my="xl" />
                 <SectionTitle

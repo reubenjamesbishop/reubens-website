@@ -48,7 +48,7 @@ export default function CurrentWorkAccordion() {
 
   return (
     <>
-      <Text>Currently @</Text>
+      <Text>Currently working @:</Text>
       <Accordion chevronPosition="right" variant="contained">
         {items}
       </Accordion>

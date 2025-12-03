@@ -53,18 +53,48 @@ npm run preview
 
 ### Deployment
 
-Deploy to GitHub Pages:
+This project uses GitHub Actions for automatic deployment to GitHub Pages.
+
+#### Automatic Deployment
+Every push to the `main` branch will automatically trigger a deployment.
+
+#### Manual Deployment
+1. Go to the "Actions" tab in your GitHub repository
+2. Select the "Deploy to GitHub Pages" workflow
+3. Click "Run workflow"
+
+#### First-time Setup
+To enable GitHub Pages deployment:
+1. Go to your repository Settings → Pages
+2. Under "Build and deployment", set Source to "GitHub Actions"
+3. Push to the `main` branch or manually trigger the workflow
+
+#### Alternative: Manual Deploy with gh-pages
+You can still deploy manually using:
 ```bash
 npm run deploy
 ```
 
-This will build the project and push the `dist` folder to the `gh-pages` branch.
+This will build and push directly to the `gh-pages` branch.
 
 ## Project Structure
 
-- `src/` - Source code
-  - `components/` - Reusable React components
-  - `pages/` - Page components
-  - `assets/` - Images and static files
-- `public/` - Public assets
-- `dist/` - Production build output (generated)
+```
+src/
+├── types/              # TypeScript interfaces
+├── data/               # Static content (work, projects, education, etc.)
+├── components/
+│   ├── common/         # Reusable UI components
+│   └── sections/       # Page section components
+├── pages/              # Page components
+└── assets/             # Images and static files
+```
+
+## Updating Content
+
+All content is separated from code for easy updates:
+- **Work Experience**: Edit `src/data/experience.ts`
+- **Projects**: Edit `src/data/projects.ts`
+- **Education**: Edit `src/data/education.ts`
+- **Tech Stack**: Edit `src/data/technologies.ts`
+- **Contact Info**: Edit `src/data/contact.ts`

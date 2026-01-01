@@ -2,16 +2,6 @@ import { Group, Text, Accordion } from "@mantine/core";
 
 const charactersList = [
 {
-    id: "Cortex (acquired by Schneider Electric)",
-    label: "Cortex (acquired by Schneider Electric)",
-    description: "Senior Software Engineer",
-    content: `
-    Worked as a senior software engineer at Cortex, a clean-energy startup that was later acquired by Schneider Electric.
-    Developed software solutions to optimize energy consumption and integrate renewable energy sources using mainly 
-    Python and Go.
-    `,
-},
-{
     id: "iO Energy",
     label: "iO Energy",
     description: "CTO / Lead Software Engineer",
@@ -80,7 +70,7 @@ export default function PreviousWorkAccordion() {
 
   return (
     <>
-      <Text c={'gray'} fw={'bold'}>I have also worked at</Text>
+      <Text>Have previously been @</Text>
       <Accordion chevronPosition="right" variant="contained">
         {items}
       </Accordion>

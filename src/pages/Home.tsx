@@ -42,13 +42,11 @@ import resume_link from "../assets/reuben_bishop_cv.pdf";
 function PageIntro() {
   return (
     <Stack>
-      <Text>
-        Hello! I'm Reuben - a product-minded software engineer with a passion for designing and
-        building great products (and working with delightful people). I have
-        worked mainly as a full-stack software engineer for the last few
-        years, but I have have been able to ramp up in other interesting areas
-        including data science, data engineering, UI/UX design and product
-        management.
+      <Text ta={{ base: "center", md: "left" }}>
+        I'm a very product-minded software engineer, with a passion for designing and building delightful products
+        (and working with delightful people). <br/><br/>
+        I like working on data-intensive software problems, software architecture
+        and long walks on the beach.
       </Text>
       <Space />
       <Grid>
@@ -88,9 +86,8 @@ export default function Home() {
     <>
       <Container size={"lg"} pt="xl">
         <Space h="xl" />
-        <Stack>
           <Grid>
-            <Grid.Col span={{ base: 12, md: 5 }}>
+            <Grid.Col span={{ base: 12, md: 5 }} >
               <Box
                 p="xl"
                 style={{
@@ -101,8 +98,9 @@ export default function Home() {
                 <Center>
                   <Stack>
                     <Box>
-                      <Title order={3}>Hi,</Title>
-                      <Title order={1}>I'm Reuben.</Title>
+                      <Title order={3}>Hey,</Title>
+                      <Title order={1}>I'm Reuben!</Title>
+
                     </Box>
                     <Box style={{ width: 200 }}>
                       <Image
@@ -127,8 +125,8 @@ export default function Home() {
                 </Center>
               </Box>
             </Grid.Col>
-            <Grid.Col span={{ base: 12, md: 7 }}>
-              <Stack p="xl">
+            <Grid.Col span={{ base: 12, md: 7 }} >
+              <Stack p="lg">
                 <PageIntro />
                 <Divider my="xl" />
                 <SectionTitle
@@ -251,7 +249,6 @@ export default function Home() {
             </Grid.Col>
           </Grid>
           <Space h="xl" />
-        </Stack>
       </Container>
     </>
   );

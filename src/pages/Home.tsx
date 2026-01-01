@@ -42,9 +42,9 @@ import resume_link from "../assets/reuben_bishop_cv.pdf";
 function PageIntro() {
   return (
     <Stack>
-      <Text>
+      <Text ta={{ base: "center", md: "left" }}>
         I'm a very product-minded software engineer, with a passion for designing and building delightful products
-        (and working with delightful people). <br/>
+        (and working with delightful people). <br/><br/>
         I like working on data-intensive software problems, software architecture
         and long walks on the beach.
       </Text>

@@ -11,11 +11,11 @@ interface ProjectProps {
 export default function Project(props: ProjectProps) {
   return (
     <>
-      <Stack gap={0}>
+      <Stack gap={0} align="flex-start">
         <Title order={2}>{props.title}</Title>
         <Text c="dimmed" size="sm">{props.subtitle}</Text>
         <Space h="sm" />
-        <Text c="dimmed" size="sm">{props.description}</Text>
+        <Text size="sm">{props.description}</Text>
         <Space h="md" />
         <Button
           component="a"

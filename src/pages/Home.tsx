@@ -12,6 +12,7 @@ import {
   Center,
   Indicator,
   Group,
+  AspectRatio,
 } from "@mantine/core";
 
 import meImage from "../assets/me.png";
@@ -30,6 +31,7 @@ import {
   IconArrowNarrowRight,
   IconBrandLinkedin,
   IconBrandGithub,
+  IconCircleArrowRight,
 } from "@tabler/icons-react";
 
 import Project from "../components/Project/Project";
@@ -157,15 +159,43 @@ export default function Home() {
                 subtitle="A couple of interesting things i've worked on"
               />
               <Space h="lg" />
-              <Project
-                title="Kwack"
-                subtitle="Medical student study platform"
-                link="https://kwack.io"
-                description="Kwack is a study platform that helps medical students prepare for their
-                  final year major Objective Structured Clinical Reasoning Examinations (OSCEs).
-                  Students can create, run and share interactive OSCE cases with each other, or run their cases against
-                  an AI study buddy."
-              />
+              <Stack gap={0} align="flex-start">
+                <Title order={2}>Kwack</Title>
+                <Text c="dimmed" size="sm">Medical student study platform</Text>
+                <Space h="sm" />
+                <Text size="sm">
+                  Kwack is a study platform that helps medical students prepare for their
+                  final year Objective Structured Clinical Examinations (OSCEs). These exams
+                  simulate real patient encounters, and students need extensive practice to succeed.
+                </Text>
+                <Space h="xs" />
+                <Text size="sm">
+                  With Kwack, students can create, run, and share interactive OSCE cases with each other.
+                  The platform also features an AI study buddy that can roleplay as a patient, providing
+                  realistic practice scenarios anytime, anywhere.
+                </Text>
+                <Space h="md" />
+                <AspectRatio ratio={16 / 9} w="100%">
+                  <iframe
+                    src="https://www.youtube.com/embed/x8-saE-Pvdc"
+                    title="Kwack Demo"
+                    style={{ border: "1px solid #e5e5e5", borderRadius: 8 }}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </AspectRatio>
+                <Space h="md" />
+                <Button
+                  component="a"
+                  href="https://kwack.io"
+                  variant="outline"
+                  color="black"
+                  radius="xl"
+                  rightSection={<IconCircleArrowRight size={20} />}
+                >
+                  Check it out
+                </Button>
+              </Stack>
               <Space h="xl" />
               <Project
                 title="Freight Analysis Dashboard"

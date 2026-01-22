@@ -8,7 +8,7 @@ export default function TechnologyPill({ thing }: TechnologyPillProps) {
   return (
     <Box
       px={"lg"}
-      py={"5px"}
+      py={6}
       style={{
         border: "1px solid black",
         borderRadius: "100px",

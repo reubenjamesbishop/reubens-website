@@ -43,8 +43,14 @@ function PageIntro() {
   return (
     <Stack>
       <Text ta={{ base: "center", md: "left" }}>
-        I'm a product-minded software engineer, with a passion for designing and
-        building delightful products (and working with delightful people)!{" "}
+        Hello! I'm Reuben - a product-minded software engineer, with a passion
+        for designing and building delightful products (and working with
+        delightful people)! <br />
+        <br />
+        I've worked in a few different industries as a software engineer doing
+        various things - including defence, energy and technology - and I love
+        dabbling in side projects (you should check out kwack if you're in the
+        medical industry!)
         <br />
         <br />I like working on data-intensive software problems, software
         architecture and long walks on the beach.
@@ -117,7 +123,13 @@ export default function Home() {
                     color="green"
                     disabled={true}
                   >
-                    <Box style={{ width: 200 }}>
+                    <Box
+                      style={{
+                        width: 200,
+                        border: "1px solid #e5e5e5",
+                        borderRadius: "var(--mantine-radius-md)",
+                      }}
+                    >
                       <Image fit="contain" radius="md" src={meImage} />
                     </Box>
                   </Indicator>
@@ -128,22 +140,23 @@ export default function Home() {
           <Grid.Col span={{ base: 12, md: 7 }}>
             <Stack p="lg">
               <PageIntro />
-              <Divider my="xl" />
+              <Divider my={48} />
               <SectionTitle
                 title="My Experience"
                 subtitle="Cool jobs I've had the pleasure of working in"
                 image={experience}
               />
+              <Space h="lg" />
               <CurrentWorkAccordion />
-              <Space />
+              <Space h="md" />
               <PreviousWorkAccordion />
-              <Space />
-              <Divider my="xl" />
+              <Divider my={48} />
               <SectionTitle
-                title="My projects"
+                title="My Projects"
                 image={projects}
                 subtitle="A couple of interesting things i've worked on"
               />
+              <Space h="lg" />
               <Project
                 title="Kwack"
                 subtitle="Medical student study platform"
@@ -171,20 +184,40 @@ export default function Home() {
                 description="A simple web application that automatically calculated the optimal solution to the DragonFjord 'Puzzle of the Day'.
                   Created app with React + Flask, and wrote up an accompanying blog post."
               />
-              <Divider my="xl" />
+              <Divider my={48} />
               <SectionTitle
                 title="My Favourite Tech"
                 image={""}
                 // subtitle="Technologies that I like to work with"
               />
-              <Text c="dimmed">Languages I like</Text>
+              <Space h="lg" />
+              <Text
+                size="xs"
+                c="dimmed"
+                tt="uppercase"
+                fw={600}
+                style={{ letterSpacing: "0.05em" }}
+                mb="xs"
+              >
+                Languages
+              </Text>
               <Group gap={"xs"}>
                 <TechnologyPill thing="Python" />
                 <TechnologyPill thing="TypeScript" />
                 <TechnologyPill thing="Go" />
                 <TechnologyPill thing="SQL" />
               </Group>
-              <Text c="dimmed">Frameworks and Tech I love to use</Text>
+              <Space h="md" />
+              <Text
+                size="xs"
+                c="dimmed"
+                tt="uppercase"
+                fw={600}
+                style={{ letterSpacing: "0.05em" }}
+                mb="xs"
+              >
+                Frameworks & Tools
+              </Text>
               <Group gap={"xs"}>
                 <TechnologyPill thing="Snowflake" />
                 <TechnologyPill thing="Dagster" />
@@ -194,57 +227,70 @@ export default function Home() {
                 <TechnologyPill thing="Docker" />
                 <TechnologyPill thing="Terraform" />
               </Group>
-              <Text c="dimmed">Other stuff</Text>
+              <Space h="md" />
+              <Text
+                size="xs"
+                c="dimmed"
+                tt="uppercase"
+                fw={600}
+                style={{ letterSpacing: "0.05em" }}
+                mb="xs"
+              >
+                Other
+              </Text>
               <Group gap={"xs"}>
                 <TechnologyPill thing="Figma" />
                 <TechnologyPill thing="Notion" />
               </Group>
-              <Divider my="xl" />
+              <Divider my={48} />
               <SectionTitle
                 title="Education"
                 image={education}
                 subtitle="My degrees and certifications"
               />
+              <Space h="lg" />
               <EducationAccordion />
-              <Space />
+              <Space h="md" />
               <CertificateAccordion />
-              <Divider my="xl" />
+              <Divider my={48} />
               <SectionTitle
                 title="Contact"
                 image={contact}
                 subtitle="Get in touch, I'd love to hear from you!"
               />
-              <Space h="xl" />
-              <Button
-                variant="outline"
-                color="black"
-                radius={"xl"}
-                component="a"
-                href="mailto:reubenjamesbishop@gmail.com"
-                rightSection={<IconMail size={20} />}
-              >
-                Send me an Email
-              </Button>
-              <Button
-                variant="outline"
-                color="black"
-                radius={"xl"}
-                component="a"
-                href="https://www.linkedin.com/in/reubenbishop/"
-                rightSection={<IconBrandLinkedin size={20} />}
-              >
-                Add me on Linked In
-              </Button>
-              <Button
-                variant="outline"
-                color="black"
-                radius={"xl"}
-                component="a"
-                href="https://www.github.com/reubenjamesbishop"
-                rightSection={<IconBrandGithub size={20} />}
-              >
-                Check out my GitHub
-              </Button>
+              <Space h="lg" />
+              <Stack gap="sm">
+                <Button
+                  variant="outline"
+                  color="black"
+                  radius={"xl"}
+                  component="a"
+                  href="mailto:reubenjamesbishop@gmail.com"
+                  rightSection={<IconMail size={20} />}
+                >
+                  Send me an Email
+                </Button>
+                <Button
+                  variant="outline"
+                  color="black"
+                  radius={"xl"}
+                  component="a"
+                  href="https://www.linkedin.com/in/reubenbishop/"
+                  rightSection={<IconBrandLinkedin size={20} />}
+                >
+                  Add me on Linked In
+                </Button>
+                <Button
+                  variant="outline"
+                  color="black"
+                  radius={"xl"}
+                  component="a"
+                  href="https://www.github.com/reubenjamesbishop"
+                  rightSection={<IconBrandGithub size={20} />}
+                >
+                  Check out my GitHub
+                </Button>
+              </Stack>
             </Stack>
           </Grid.Col>
         </Grid>

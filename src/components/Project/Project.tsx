@@ -13,10 +13,10 @@ export default function Project(props: ProjectProps) {
     <>
       <Stack gap={0}>
         <Title order={2}>{props.title}</Title>
-        <Text>{props.subtitle}</Text>
+        <Text c="dimmed" size="sm">{props.subtitle}</Text>
+        <Space h="sm" />
+        <Text c="dimmed" size="sm">{props.description}</Text>
         <Space h="md" />
-        <Text c="dimmed">{props.description}</Text>
-        <Space h="xl" />
         <Button
           component="a"
           href={props?.link}

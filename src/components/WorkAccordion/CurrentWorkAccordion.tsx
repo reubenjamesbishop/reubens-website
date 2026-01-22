@@ -47,7 +47,9 @@ export default function CurrentWorkAccordion() {
 
   return (
     <>
-      <Text c={'gray'} fw={'bold'}>Currently, you'll find me at</Text>
+      <Text size="xs" c="dimmed" tt="uppercase" fw={600} style={{ letterSpacing: "0.05em" }} mb="xs">
+        Currently
+      </Text>
       <Accordion chevronPosition="right" variant="contained">
         {items}
       </Accordion>

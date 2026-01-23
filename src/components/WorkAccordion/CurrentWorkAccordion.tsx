@@ -2,12 +2,11 @@ import { Group, Text, Accordion } from "@mantine/core";
 
 const charactersList = [
   {
-    id: "Cortex (acquired by Schneider Electric)",
-    label: "Cortex (acquired by Schneider Electric)",
-    description: "Senior Software Engineer",
+    id: "Canva",
+    label: "Canva",
+    description: "Software Engineer",
     content: `
-    Worked as a senior software engineer at Cortex, a clean-energy startup that was later acquired by Schneider Electric.
-    Developed software solutions to optimize energy consumption and integrate renewable energy sources.
+    Working on the AI Workflows and Tools optimisations team at Canva in Sydney.
     `,
   },
 ];
@@ -48,7 +47,9 @@ export default function CurrentWorkAccordion() {
 
   return (
     <>
-      <Text>Currently working @:</Text>
+      <Text size="xs" c="dimmed" tt="uppercase" fw={600} style={{ letterSpacing: "0.05em" }} mb="xs">
+        Currently
+      </Text>
       <Accordion chevronPosition="right" variant="contained">
         {items}
       </Accordion>

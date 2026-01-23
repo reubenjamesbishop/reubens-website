@@ -54,7 +54,9 @@ export default function CertificateAccordion() {
 
   return (
     <>
-      <Text>Degrees</Text>
+      <Text size="xs" c="dimmed" tt="uppercase" fw={600} style={{ letterSpacing: "0.05em" }} mb="xs">
+        Certifications
+      </Text>
       <Accordion chevronPosition="right" variant="contained">
         {items}
       </Accordion>

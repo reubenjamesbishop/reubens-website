@@ -1,19 +1,24 @@
 import { AppShell, MantineProvider } from "@mantine/core";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-// import HeaderMenu from "./components/Header/HeaderMenu";
+import BlogPost from "./pages/BlogPost";
 
 import "@mantine/core/styles.css";
 
 function App() {
   return (
     <MantineProvider theme={{ fontFamily: "Inter, sans-serif" }}>
-      <AppShell>
-        {/* <AppShell header={{ height: 56 }}> */}
-        <AppShell.Header>{/* <HeaderMenu /> */}</AppShell.Header>
-        <AppShell.Main style={{ background: "#FFFBF4" }}>
-          <Home />
-        </AppShell.Main>
-      </AppShell>
+      <HashRouter>
+        <AppShell>
+          <AppShell.Header>{/* <HeaderMenu /> */}</AppShell.Header>
+          <AppShell.Main style={{ background: "#FFFBF4" }}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
+            </Routes>
+          </AppShell.Main>
+        </AppShell>
+      </HashRouter>
     </MantineProvider>
   );
 }

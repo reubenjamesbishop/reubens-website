@@ -32,7 +32,9 @@ import {
   IconBrandLinkedin,
   IconBrandGithub,
   IconCircleArrowRight,
+  IconNotebook,
 } from "@tabler/icons-react";
+import { Link } from "react-router-dom";
 
 import Project from "../components/Project/Project";
 import EducationAccordion from "../components/EducationAccordion/EducationAccordion";
@@ -185,16 +187,28 @@ export default function Home() {
                   />
                 </AspectRatio>
                 <Space h="md" />
-                <Button
-                  component="a"
-                  href="https://kwack.io"
-                  variant="outline"
-                  color="black"
-                  radius="xl"
-                  rightSection={<IconCircleArrowRight size={20} />}
-                >
-                  Check it out
-                </Button>
+                <Group gap="sm">
+                  <Button
+                    component="a"
+                    href="https://kwack.io"
+                    variant="outline"
+                    color="black"
+                    radius="xl"
+                    rightSection={<IconCircleArrowRight size={20} />}
+                  >
+                    Check it out
+                  </Button>
+                  <Button
+                    component={Link}
+                    to="/blog/building-kwack"
+                    variant="outline"
+                    color="black"
+                    radius="xl"
+                    rightSection={<IconNotebook size={20} />}
+                  >
+                    Read the blog post
+                  </Button>
+                </Group>
               </Stack>
               <Space h="xl" />
               <Project

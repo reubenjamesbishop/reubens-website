@@ -38,7 +38,7 @@ export default function BlogPost() {
   }
 
   return (
-    <Container size="sm" py="xl">
+    <Container size="sm" py="xl" px="xl">
       <Space h="xl" />
       <Button
         component={Link}

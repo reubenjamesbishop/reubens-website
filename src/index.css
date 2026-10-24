@@ -345,3 +345,27 @@ body { background: #FFFBF4; }
   .now-block h2 { font-size: 32px; letter-spacing: -1px; margin-bottom: 8px; }
   .now-block > .eyebrow { margin-bottom: 20px; }
 }
+
+/* A small drag-and-catch moon surprise. */
+.separate-moon { pointer-events: auto; cursor: grab; touch-action: none; transition: transform 1.1s cubic-bezier(.22,.68,.25,1); }
+.separate-moon:focus-visible { outline: none; filter: drop-shadow(0 0 24px #d7eaff); }
+.moon-dragging .separate-moon { cursor: grabbing; transition: none; }
+.moon-caught .separate-moon { transition-duration: .55s; }
+.original-person { pointer-events: none; }
+.moon-portrait::before { pointer-events: none; }
+.moon-dragging::before, .moon-caught::before { opacity: 0; }
+.moon-catch-ripple { pointer-events: none; fill: none; stroke: #d7eaff; stroke-width: 3; }
+.moon-catch-ripple circle { transform-box: fill-box; transform-origin: center; animation: moon-catch-ring 1.6s ease-out both; }
+.moon-catch-ripple circle + circle { animation-delay: .3s; }
+@keyframes moon-catch-ring { from { opacity: .7; transform: scale(.9); } to { opacity: 0; transform: scale(1.5); } }
+@media (prefers-reduced-motion: reduce) {
+  .separate-moon, .moon-caught .separate-moon { transition-duration: .01s; }
+  .moon-catch-ripple { display: none; }
+}
+
+.moon-eye-glow { pointer-events: none; fill: #ff4740; filter: drop-shadow(0 0 9px #ff1818) drop-shadow(0 0 24px #ff0000); animation: moon-eyes-awaken 3.5s ease-in-out .5s both; }
+@keyframes moon-eyes-awaken {
+  0%, 100% { opacity: 0; }
+  18%, 65% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) { .moon-eye-glow { animation-duration: 2s; } }

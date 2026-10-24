@@ -1,10 +1,9 @@
 import { IconBriefcase, IconMoon, IconSun, IconExternalLink, IconArticle, IconBrandGithub, IconBrandMedium, IconBrandLinkedin, IconFileText } from "@tabler/icons-react";
 import HarbourScene from "../components/HarbourScene";
 import { useState } from "react";
+import MoonPortrait from "../components/MoonPortrait";
 import { Button, Modal } from "@mantine/core";
 import { Link } from "react-router-dom";
-import personCutout from "../assets/reuben-original-clean-edge.png";
-import moonCutout from "../assets/moon-repaired-only.png";
 import resume from "../assets/reuben_bishop_cv.pdf";
 import CurrentWorkAccordion from "../components/WorkAccordion/CurrentWorkAccordion";
 import PreviousWorkAccordion from "../components/WorkAccordion/PreviousWorkAccordion";
@@ -20,10 +19,7 @@ export default function Home({ night, toggleTheme }: { night: boolean; toggleThe
       </button></header>
       <div className="composition">
         <header className="hello-block"><h1>Hey, I’m<br />Reuben.</h1><p>Software engineer with data sprinkles</p><HarbourScene night={night} /></header>
-        <figure className="moon-portrait"><svg className="portrait-layers" viewBox="0 0 1800 2400" role="img" aria-label="Reuben with his arms raised beneath a giant moon">
-          <image className="separate-moon" href={moonCutout} x="170" y="310" width="950" height="950" />
-          <image className="original-person" href={personCutout} width="1800" height="2400" />
-        </svg></figure>
+        <MoonPortrait />
         <section className="snippet now-block"><span className="eyebrow"><IconBriefcase size={16} stroke={1.5} aria-hidden="true" />currently</span><h2>AI DevX at Canva</h2><p className="current-role">Software Engineer</p><p>Working on improving the agentic engineering experience at Canva’s Sydney HQ.</p><button onClick={() => setPanel("Now")}>What I’ve been working on <span>↗</span></button></section>
         <section className="snippet experience-block"><span className="eyebrow">Experience</span><h2>A few places <br />I’ve built things.</h2><p>Mostly startups and energy tech, with some submarines sprinkled in.</p><button onClick={() => setPanel("Experience")}>The work <span>↗</span></button></section>
         <section className="snippet projects-block"><span className="eyebrow">Side Projects</span><h2>Usually making <br />something.</h2><p>AI medical study tools, hackathon projects and a very unnecessary puzzle solver.</p><button onClick={() => setPanel("Projects")}>Have a look <span>↗</span></button></section>

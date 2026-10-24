@@ -1,16 +1,20 @@
 import { IconBriefcase, IconMoon, IconSun, IconExternalLink, IconArticle, IconBrandGithub, IconBrandMedium, IconBrandLinkedin, IconFileText } from "@tabler/icons-react";
 import HarbourScene from "../components/HarbourScene";
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import MoonPortrait from "../components/MoonPortrait";
+
 import { Button, Modal } from "@mantine/core";
 import { Link } from "react-router-dom";
 import resume from "../assets/reuben_bishop_cv.pdf";
 import CurrentWorkAccordion from "../components/WorkAccordion/CurrentWorkAccordion";
 import PreviousWorkAccordion from "../components/WorkAccordion/PreviousWorkAccordion";
 
+const FallingBooks = lazy(() => import("../components/FallingBooks"));
+
 type Panel = "Now" | "Experience" | "Projects" | "A bit more";
 export default function Home({ night, toggleTheme }: { night: boolean; toggleTheme: () => void }) {
   const [panel, setPanel] = useState<Panel | null>(null);
+  const [bookDrop, setBookDrop] = useState(0);
   return (
     <main className={`moon-page${night ? " night-mode" : ""}`}>
       <header className="site-header"><a className="wordmark" href="#/">Reuben Bishop</a><button className="theme-toggle" type="button" onClick={toggleTheme} aria-label={night ? "Switch to light mode" : "Switch to dark mode"} aria-pressed={night} title={night ? "Switch to light mode" : "Switch to dark mode"}>
@@ -19,12 +23,13 @@ export default function Home({ night, toggleTheme }: { night: boolean; toggleThe
       </button></header>
       <div className="composition">
         <header className="hello-block"><h1>Hey, I’m<br />Reuben.</h1><p>Software engineer with data sprinkles</p><HarbourScene night={night} /></header>
-        <MoonPortrait />
+        <MoonPortrait onCatch={() => setBookDrop(value => value + 1)} />
         <section className="snippet now-block"><span className="eyebrow"><IconBriefcase size={16} stroke={1.5} aria-hidden="true" />currently</span><h2>AI DevX at Canva</h2><p className="current-role">Software Engineer</p><p>Working on improving the agentic engineering experience at Canva’s Sydney HQ.</p><button onClick={() => setPanel("Now")}>What I’ve been working on <span>↗</span></button></section>
         <section className="snippet experience-block"><span className="eyebrow">Experience</span><h2>A few places <br />I’ve built things.</h2><p>Mostly startups and energy tech, with some submarines sprinkled in.</p><button onClick={() => setPanel("Experience")}>The work <span>↗</span></button></section>
         <section className="snippet projects-block"><span className="eyebrow">Side Projects</span><h2>Usually making <br />something.</h2><p>AI medical study tools, hackathon projects and a very unnecessary puzzle solver.</p><button onClick={() => setPanel("Projects")}>Have a look <span>↗</span></button></section>
       </div>
       <footer className="site-footer"><div className="footer-left"><button onClick={() => setPanel("A bit more")}>A bit more about me <span>↗</span></button></div><nav aria-label="Profile links"><a href={resume}><IconFileText size={15} aria-hidden="true" />Resume ↗</a><a href="https://github.com/reubenjamesbishop"><IconBrandGithub size={15} aria-hidden="true" />GitHub ↗</a><a href="https://www.linkedin.com/in/reubenbishop/"><IconBrandLinkedin size={15} aria-hidden="true" />LinkedIn ↗</a></nav></footer>
+      {bookDrop > 0 && <Suspense fallback={null}><FallingBooks drop={bookDrop} onClear={() => setBookDrop(0)} /></Suspense>}
       <Modal opened={panel !== null} onClose={() => setPanel(null)} title={panel === "Projects" ? "Side Projects" : panel} closeButtonProps={{ "aria-label": "Close details" }} centered size="lg" padding="xl" radius="md" overlayProps={{ backgroundOpacity: 0.18, blur: 5 }} classNames={{ inner: "portfolio-popout-inner", close: "portfolio-popout-close", content: night ? "portfolio-popout night-popout" : "portfolio-popout", header: "portfolio-popout-header", body: "detail-panel", title: "panel-title" }}>
         {panel === "Now" && <CurrentWorkAccordion />}
         {panel === "Experience" && <PreviousWorkAccordion />}

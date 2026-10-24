@@ -369,3 +369,10 @@ body { background: #FFFBF4; }
   18%, 65% { opacity: 1; }
 }
 @media (prefers-reduced-motion: reduce) { .moon-eye-glow { animation-duration: 2s; } }
+
+/* Moon-triggered book rain, with a control to clear the pile. */
+.falling-books-canvas { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 190; }
+.book-pile-controls { position: fixed; bottom: 20px; left: 20px; z-index: 191; display: flex; gap: 4px; padding: 5px; border: 1px solid #bbb6ab; border-radius: 24px; background: #fffbf4ed; box-shadow: 0 3px 18px #00000018; color: #292c32; }
+.moon-page .book-pile-controls button { display: flex; align-items: center; justify-content: center; gap: 7px; padding: 7px 11px; min-height: 34px; font-size: 12px; border-radius: 20px; }
+.moon-page .book-pile-controls button:hover { background: #d8d2c755; }
+.night-mode .book-pile-controls { background: #242830f5; border-color: #4b515c; color: #eee9df; }

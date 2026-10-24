@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AppShell, MantineProvider, Modal } from "@mantine/core";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -8,12 +8,16 @@ import "@mantine/core/styles.css";
 
 function App() {
   const [night, setNight] = useState(() => { try { return localStorage.getItem("portfolio-theme") !== "light"; } catch { return true; } });
+  useEffect(() => {
+    document.documentElement.style.setProperty("--page-background", night ? "#171a20" : "#FFFBF4");
+    document.documentElement.style.colorScheme = night ? "dark" : "light";
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", night ? "#171a20" : "#FFFBF4");
+  }, [night]);
   const toggleTheme = () => setNight(value => { try { localStorage.setItem("portfolio-theme", value ? "light" : "dark"); } catch { /* Storage is optional. */ } return !value; });
   return (
     <MantineProvider forceColorScheme={night ? "dark" : "light"} theme={{ fontFamily: "Inter, -apple-system, BlinkMacSystemFont, sans-serif", primaryColor: "dark", defaultRadius: "sm", components: { Modal: Modal.extend({ styles: { title: { textTransform: "lowercase" }, content: { backgroundColor: night ? "#202329" : "#FFFBF4" }, header: { backgroundColor: night ? "#202329" : "#FFFBF4" }, body: { backgroundColor: night ? "#202329" : "#FFFBF4" } } }) } }}>
       <HashRouter>
         <AppShell>
-          <AppShell.Header>{/* <HeaderMenu /> */}</AppShell.Header>
           <AppShell.Main style={{ background: night ? "#171a20" : "#FFFBF4" }}>
             <Routes>
               <Route path="/" element={<Home night={night} toggleTheme={toggleTheme} />} />

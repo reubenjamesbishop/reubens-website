@@ -376,3 +376,27 @@ body { background: #FFFBF4; }
 .moon-page .book-pile-controls button { display: flex; align-items: center; justify-content: center; gap: 7px; padding: 7px 11px; min-height: 34px; font-size: 12px; border-radius: 20px; }
 .moon-page .book-pile-controls button:hover { background: #d8d2c755; }
 .night-mode .book-pile-controls { background: #242830f5; border-color: #4b515c; color: #eee9df; }
+
+/* Paint the full viewport, including mobile safe areas and overscroll. */
+html, body, #root { min-height: 100%; background: var(--page-background, #171a20); }
+body { margin: 0; }
+.moon-page { width: 100%; box-sizing: border-box; }
+/* The moon's own filter follows it; the old offset halo does not. */
+.night-mode .moon-portrait::before { content: none; }
+@media (max-width: 1000px) {
+  .moon-page { margin-block: 0; padding: 24px max(20px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left)); }
+  .composition { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; gap: 32px; padding-top: 32px; }
+  .hello-block, .moon-portrait, .now-block, .experience-block, .projects-block { grid-column: 1; grid-row: auto; }
+  .hello-block { align-self: start; text-align: center; }
+  .hello-block h1 { font-size: clamp(40px, 8vw, 54px); }
+  .hello-block p { font-size: 14px; }
+  .hello-block .harbour-scene { width: 230px; margin: 24px auto 0; }
+  .moon-portrait { width: 100%; max-width: 420px; height: auto; aspect-ratio: 3 / 4; margin: -16px auto 0; }
+  .moon-portrait .portrait-layers { width: 100%; height: 100%; max-width: 100%; }
+  .separate-moon { filter: drop-shadow(0 0 10px #c9dce640); }
+  .night-mode .separate-moon { filter: drop-shadow(0 0 14px #c9dce655); }
+  .now-block, .experience-block, .projects-block { padding: 28px 0 0; border-top: 1px solid #e7e5df; }
+  .night-mode .now-block, .night-mode .experience-block, .night-mode .projects-block { border-color: #383c44; }
+  .site-footer { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .site-footer nav { justify-content: flex-start; margin-top: 0; gap: 24px; }
+}

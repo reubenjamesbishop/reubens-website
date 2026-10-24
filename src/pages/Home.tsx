@@ -1,11 +1,10 @@
-import { IconBriefcase, IconMoon, IconSun, IconExternalLink, IconArticle, IconBrandGithub, IconBrandMedium, IconBrandLinkedin, IconFileText } from "@tabler/icons-react";
+import { IconBriefcase, IconMoon, IconSun, IconExternalLink, IconArticle, IconBrandGithub, IconBrandMedium, IconBrandLinkedin } from "@tabler/icons-react";
 import HarbourScene from "../components/HarbourScene";
 import { lazy, Suspense, useState } from "react";
 import MoonPortrait from "../components/MoonPortrait";
 
 import { Button, Modal } from "@mantine/core";
 import { Link } from "react-router-dom";
-import resume from "../assets/reuben_bishop_cv.pdf";
 import CurrentWorkAccordion from "../components/WorkAccordion/CurrentWorkAccordion";
 import PreviousWorkAccordion from "../components/WorkAccordion/PreviousWorkAccordion";
 
@@ -28,7 +27,7 @@ export default function Home({ night, toggleTheme }: { night: boolean; toggleThe
         <section className="snippet experience-block"><span className="eyebrow">Experience</span><h2>A few places <br />I’ve built things.</h2><p>Mostly startups and energy tech, with some submarines sprinkled in.</p><button onClick={() => setPanel("Experience")}>The work <span>↗</span></button></section>
         <section className="snippet projects-block"><span className="eyebrow">Side Projects</span><h2>Usually making <br />something.</h2><p>AI medical study tools, hackathon projects and a very unnecessary puzzle solver.</p><button onClick={() => setPanel("Projects")}>Have a look <span>↗</span></button></section>
       </div>
-      <footer className="site-footer"><div className="footer-left"><button onClick={() => setPanel("A bit more")}>A bit more about me <span>↗</span></button></div><nav aria-label="Profile links"><a href={resume}><IconFileText size={15} aria-hidden="true" />Resume ↗</a><a href="https://github.com/reubenjamesbishop"><IconBrandGithub size={15} aria-hidden="true" />GitHub ↗</a><a href="https://www.linkedin.com/in/reubenbishop/"><IconBrandLinkedin size={15} aria-hidden="true" />LinkedIn ↗</a></nav></footer>
+      <footer className="site-footer"><div className="footer-left"><button onClick={() => setPanel("A bit more")}>A bit more about me <span>↗</span></button></div><nav aria-label="Profile links"><a href="https://github.com/reubenjamesbishop"><IconBrandGithub size={15} aria-hidden="true" />GitHub ↗</a><a href="https://www.linkedin.com/in/reubenbishop/"><IconBrandLinkedin size={15} aria-hidden="true" />LinkedIn ↗</a></nav></footer>
       {bookDrop > 0 && <Suspense fallback={null}><FallingBooks drop={bookDrop} onClear={() => setBookDrop(0)} /></Suspense>}
       <Modal opened={panel !== null} onClose={() => setPanel(null)} title={panel === "Projects" ? "Side Projects" : panel} closeButtonProps={{ "aria-label": "Close details" }} centered size="lg" padding="xl" radius="md" overlayProps={{ backgroundOpacity: 0.18, blur: 5 }} classNames={{ inner: "portfolio-popout-inner", close: "portfolio-popout-close", content: night ? "portfolio-popout night-popout" : "portfolio-popout", header: "portfolio-popout-header", body: "detail-panel", title: "panel-title" }}>
         {panel === "Now" && <CurrentWorkAccordion />}

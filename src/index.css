@@ -253,3 +253,63 @@ body { background: #FFFBF4; }
   .harbour-ferry-travel { animation: none; }
   .harbour-periscope, .periscope-ripple { animation: none; visibility: hidden; }
 }
+
+/* Fluid content and comfortable touch controls across phones and tablets. */
+.composition > *, .detail-panel, .project-actions > * { min-width: 0; }
+.site-footer nav { flex-wrap: wrap; }
+.blog-page { overflow-wrap: anywhere; }
+.blog-page img, .blog-page video, .detail-panel img { max-width: 100%; height: auto; }
+.blog-page pre { max-width: 100%; overflow-x: auto; }
+.blog-page table { display: block; max-width: 100%; overflow-x: auto; }
+.blog-page h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); line-height: 1.2; }
+.blog-page h2 { font-size: clamp(1.4rem, 4vw, 1.8rem); }
+.portfolio-popout { max-width: 100%; }
+.portfolio-popout-close { min-width: 44px; min-height: 44px; }
+.project-actions .mantine-Button-root { max-width: 100%; min-height: 44px; }
+.moon-page .theme-toggle { width: 44px; height: 44px; flex-shrink: 0; }
+@media (max-width: 1000px) {
+  .moon-page { max-width: 720px; padding: 24px clamp(20px, 4vw, 36px); }
+  .site-header { height: 44px; }
+  .composition { height: auto; min-height: 0; max-height: none; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: auto auto auto; gap: 36px 24px; padding: 36px 0; }
+  .hello-block { grid-column: 1; grid-row: 1; align-self: center; padding: 0; }
+  .hello-block h1 { font-size: clamp(36px, 6vw, 54px); letter-spacing: -2px; }
+  .hello-block p, .snippet p { font-size: 14px; line-height: 1.7; }
+  .moon-portrait { grid-column: 2; grid-row: 1; width: 100%; margin: 0; height: clamp(290px, 52vw, 430px); align-self: center; }
+  .moon-portrait .portrait-layers { width: 115%; }
+  .now-block { grid-column: 1 / -1; grid-row: 2; padding: 28px 0 0; min-height: 0; border-top: 1px solid #e7e5df; display: grid; grid-template-columns: minmax(0, 1fr) minmax(150px, .8fr); column-gap: 24px; align-items: start; }
+  .now-block > .eyebrow, .now-block > h2, .now-block > p, .now-block > button { grid-column: 1; }
+  .now-block .harbour-scene { position: static; grid-column: 2; grid-row: 1 / 5; width: 100%; max-width: 240px; align-self: center; justify-self: end; margin: 0; }
+  .experience-block { grid-column: 1; grid-row: 3; }
+  .projects-block { grid-column: 2; grid-row: 3; }
+  .snippet h2, .now-block h2 { font-size: 22px; }
+  .snippet .eyebrow { margin-bottom: 14px; }
+  .snippet button { min-height: 44px; font-size: 14px; width: fit-content; }
+  .site-footer { flex-wrap: wrap; gap: 12px 24px; }
+  .site-footer button, .site-footer nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; }
+  .site-footer nav { gap: 8px 20px; }
+}
+@media (max-width: 480px) {
+  .composition { column-gap: 8px; row-gap: 30px; }
+  .hello-block h1 { font-size: 36px; }
+  .hello-block p { font-size: 13px; }
+  .moon-portrait { height: 300px; }
+  .moon-portrait .portrait-layers { width: 110%; }
+  .now-block { display: block; }
+  .now-block .harbour-scene { width: 210px; max-width: 100%; margin: 20px auto 8px; }
+  .experience-block, .projects-block { grid-column: 1 / -1; grid-row: auto; }
+  .projects-block { padding-top: 26px; border-top: 1px solid #e7e5df; }
+  .night-mode .projects-block { border-color: #383c44; }
+  .snippet h2 br { display: none; }
+  .site-footer { display: block; }
+  .site-footer nav { margin-top: 8px; justify-content: space-between; gap: 8px; }
+  .portfolio-popout-inner { padding: 12px; }
+  .portfolio-popout { max-height: calc(100dvh - 24px); }
+  .portfolio-popout-header { padding: 16px 20px 12px; }
+  .portfolio-popout .detail-panel { padding: 16px 20px 24px; overflow-wrap: anywhere; }
+  .detail-panel h3 { font-size: 21px; }
+  .blog-page { padding-inline: 20px; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .portfolio-popout-inner { padding-block: 8px; }
+  .portfolio-popout { max-height: calc(100dvh - 16px); }
+}

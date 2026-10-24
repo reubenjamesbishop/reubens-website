@@ -82,7 +82,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .snippet button { font-size: 13px; margin-top: 22px; padding-bottom: 5px; border-bottom: 1px solid #dadada; }
 .snippet button span { display: inline-block; margin-left: 18px; transition: transform .2s ease; }
 .snippet button:hover span { transform: translate(3px,-3px); }
-.status-dot { width: 5px; height: 5px; border-radius: 50%; background: #498862; }
 .site-footer { padding-top: 24px; border-top: 1px solid #ededed; color: #777; }
 .site-footer button { font-size: 12px; }
 .site-footer nav { display: flex; gap: 26px; font-size: 12px; }
@@ -126,3 +125,131 @@ body { background: #FFFBF4; }
 .moon-portrait img { mix-blend-mode: multiply; }
 
 .portfolio-popout, .portfolio-popout-header { background-color: #FFFBF4; }
+
+.harbour-scene { width: 230px; max-width: 100%; margin-top: 16px; }
+.harbour-scene svg { display: block; width: 100%; overflow: visible; }
+.harbour-ferry-travel { animation: ferry-cruise 20s ease-in-out infinite alternate; }
+.harbour-ferry-bob { animation: ferry-bob 3s ease-in-out infinite; transform-origin: 140px 112px; }
+@keyframes ferry-cruise { from { transform: translateX(-14px); } to { transform: translateX(14px); } }
+@keyframes ferry-bob { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-2px) rotate(1deg); } }
+@media (max-width: 700px) { .harbour-scene { width: 170px; margin-top: 20px; } }
+@media (prefers-reduced-motion: reduce) { .harbour-ferry-travel, .harbour-ferry-bob { animation: none; } }
+
+.now-block { padding-top: 0; }
+.now-block .harbour-scene { width: 230px; margin-top: 14px; }
+.now-block > button { margin-top: 10px; }
+@media (max-width: 700px) { .now-block { position: relative; min-height: 195px; padding-right: 46%; } .now-block .harbour-scene { position: absolute; right: 0; top: 10px; width: 46%; } .now-block h2 { font-size: 18px; } }
+
+.home-collection-figure img { width: 100%; height: auto; mix-blend-mode: multiply; }
+.detail-panel .cortex-entry:has(.home-collection-figure) { grid-template-columns: 1fr; }
+.home-collection-figure { width: min(100%, 400px); justify-self: center; margin: 10px 0; }
+
+.project-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.project-actions .mantine-Button-root { border-color: #c6c0b5; font-weight: 500; text-decoration: none; height: auto; min-height: 36px; padding: 8px 12px; }
+.project-actions .mantine-Button-label { white-space: normal; }
+.project-actions .mantine-Button-root:hover { background: #f2ecdf; border-color: #8e877a; }
+.projects-list .video-frame { margin-top: 20px; }
+.project-actions .mantine-Button-root { border-radius: 10px; }
+
+.panel-title { text-transform: lowercase; }
+/* Centre the complete landing page in tall or zoomed-out viewports. */
+.mantine-AppShell-main:has(> .moon-page) {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+.moon-page {
+  width: 100%;
+  flex-shrink: 0;
+  margin-block: auto;
+}
+
+.award-note > p { text-align: center; }
+.award-snapshot { width: min(100%, 350px); margin: 8px auto 0; padding: 48px 10px 10px; }
+.award-image-link { margin-inline: auto; }
+.award-aside { top: 0; left: calc(50% - 23px); transform: rotate(5deg); }
+
+.award-snapshot { padding-top: 76px; }
+.award-aside { top: 0; left: calc(50% - 22px); transform: none; }
+.award-aside img { display: block; width: 44px; height: 62px; object-fit: contain; }
+
+.moon-page .eyebrow { text-transform: lowercase; }
+.site-footer nav a { display: inline-flex; align-items: center; gap: 6px; }
+
+.footer-left { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; }
+.moon-page .theme-toggle { position: relative; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; color: #777; transition: background .2s ease, color .2s ease; }
+.moon-page .theme-toggle:hover { background: #eee8de; color: #292823; }
+.theme-toggle svg { position: absolute; transition: transform .35s ease, opacity .25s ease; }
+.theme-toggle .theme-sun { opacity: 1; transform: rotate(0) scale(1); }
+.theme-toggle .theme-moon { opacity: 0; transform: rotate(-70deg) scale(.5); }
+.night-mode .theme-toggle .theme-sun { opacity: 0; transform: rotate(70deg) scale(.5); }
+.night-mode .theme-toggle .theme-moon { opacity: 1; transform: rotate(0) scale(1); }
+.moon-page .theme-toggle:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.night-mode .theme-toggle { color: #eee9df; }
+.night-mode .theme-toggle:hover { background: #2c313a; color: #fff0c7; }
+.moon-portrait img { filter: drop-shadow(0 0 12px #c9dce64d); }
+.night-mode .moon-portrait img { filter: drop-shadow(0 0 14px #c9dce629); }
+@media (prefers-reduced-motion: reduce) { .theme-toggle svg, .moon-page .theme-toggle { transition: none; } }
+.night-mode { color: #eee9df; }
+.night-mode .snippet p, .night-mode .hello-block p, .night-mode .eyebrow, .night-mode .site-footer { color: #b1b3b9; }
+.night-mode .site-footer, .night-mode .snippet button, .night-mode .now-block { border-color: #383c44; }
+.night-mode .site-header a:hover, .night-mode .site-footer a:hover, .night-mode .site-footer button:hover { color: #fff8df; }
+.night-mode .lit-windows { filter: drop-shadow(0 0 3px #ffd16b99); }
+.night-popout { color: #eee9df; }
+.night-popout p, .night-popout .panel-title, .night-popout .role-title { color: #c3c3c7; }
+.night-popout a, .night-popout .project-actions .mantine-Button-root { color: #eee9df; }
+.night-popout .project-actions .mantine-Button-root:hover { background: #363a42; }
+.night-popout .award-aside img { filter: invert(1); }
+.night-popout .home-collection-figure img { mix-blend-mode: normal; border-radius: 8px; }
+.night-popout .projects-list article, .night-popout .role-details, .night-popout .experience-entry { border-color: #41454b; }
+.moon-portrait { position: relative; }
+.moon-portrait img { position: relative; z-index: 1; }
+.night-mode .moon-portrait img { mix-blend-mode: normal; }
+.night-mode .moon-portrait::before { content: ""; position: absolute; width: 70%; aspect-ratio: 1; left: -2%; top: 15%; border-radius: 50%; background: radial-gradient(circle, #c8dcf322 15%, #c8dcf314 40%, transparent 70%); filter: blur(18px); }
+@media (max-width: 700px) { .footer-left { gap: 16px; } }
+
+.night-mode .moon-portrait::before { background: radial-gradient(circle, #c8dcf344 15%, #c8dcf31f 45%, transparent 72%); }
+/* Keep long popouts scrollable without the heavy native scrollbar track. */
+.portfolio-popout {
+  scrollbar-width: thin;
+  scrollbar-color: #b7afa1 transparent;
+}
+.portfolio-popout::-webkit-scrollbar { width: 6px; height: 6px; }
+.portfolio-popout::-webkit-scrollbar-track { background: transparent; margin-block: 12px; }
+.portfolio-popout::-webkit-scrollbar-thumb { background: #b7afa1; border-radius: 999px; }
+.portfolio-popout::-webkit-scrollbar-thumb:hover { background: #938a7c; }
+.night-popout { scrollbar-color: #59606b transparent; }
+.night-popout::-webkit-scrollbar-thumb { background: #59606b; }
+.night-popout::-webkit-scrollbar-thumb:hover { background: #7c8592; }
+@supports selector(::-webkit-scrollbar) {
+  .portfolio-popout { scrollbar-width: auto; scrollbar-color: auto; }
+}
+
+/* Separate assets keep the original portrait independent of moon effects. */
+.moon-portrait .portrait-layers { display: block; width: 100%; max-height: 100%; aspect-ratio: 3 / 4; position: relative; z-index: 1; overflow: visible; }
+@media (min-width: 701px) { .moon-portrait .portrait-layers { width: 125%; max-width: none; } }
+.separate-moon { filter: drop-shadow(0 0 18px #c9dce680) drop-shadow(0 0 42px #c9dce655); }
+.night-mode .separate-moon { filter: drop-shadow(0 0 36px #c9dce666); }
+.moon-portrait .portrait-layers { height: 100%; flex-shrink: 0; }
+
+/* Submarine surfaces only while the ferry is on the opposite half. */
+.harbour-ferry-travel { animation: ferry-round-trip 16s ease-in-out infinite; }
+@keyframes ferry-round-trip {
+  0%, 100% { transform: translateX(-50px); }
+  50% { transform: translateX(50px); }
+}
+.harbour-periscope { animation: periscope-peek 16s ease-in-out infinite; }
+.periscope-ripple { animation: periscope-ripple 16s ease-in-out infinite; transform-origin: 36px 126px; }
+@keyframes periscope-peek {
+  0%, 25%, 65%, 100% { transform: translateY(36px); }
+  32%, 55% { transform: translateY(0); }
+}
+@keyframes periscope-ripple {
+  0%, 25%, 68%, 100% { opacity: 0; transform: scaleX(.7); }
+  32%, 58% { opacity: .7; transform: scaleX(1); }
+  67% { opacity: 0; transform: scaleX(1.1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .harbour-ferry-travel { animation: none; }
+  .harbour-periscope, .periscope-ripple { animation: none; visibility: hidden; }
+}

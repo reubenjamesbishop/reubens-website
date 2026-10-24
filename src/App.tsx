@@ -7,7 +7,7 @@ import BlogPost from "./pages/BlogPost";
 import "@mantine/core/styles.css";
 
 function App() {
-  const [night, setNight] = useState(() => { try { return localStorage.getItem("portfolio-theme") === "dark"; } catch { return false; } });
+  const [night, setNight] = useState(() => { try { return localStorage.getItem("portfolio-theme") !== "light"; } catch { return true; } });
   const toggleTheme = () => setNight(value => { try { localStorage.setItem("portfolio-theme", value ? "light" : "dark"); } catch { /* Storage is optional. */ } return !value; });
   return (
     <MantineProvider forceColorScheme={night ? "dark" : "light"} theme={{ fontFamily: "Inter, -apple-system, BlinkMacSystemFont, sans-serif", primaryColor: "dark", defaultRadius: "sm", components: { Modal: Modal.extend({ styles: { title: { textTransform: "lowercase" }, content: { backgroundColor: night ? "#202329" : "#FFFBF4" }, header: { backgroundColor: night ? "#202329" : "#FFFBF4" }, body: { backgroundColor: night ? "#202329" : "#FFFBF4" } } }) } }}>

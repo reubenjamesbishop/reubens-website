@@ -17,6 +17,7 @@
     "@mantine/hooks": "^7.6.2",
     "@tabler/icons-react": "^3.0.1",
     "gh-pages": "^6.1.1",
+    "matter-js": "^0.20.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^10.1.0",
@@ -24,6 +25,7 @@
     "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
+    "@types/matter-js": "^0.20.2",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
     "@typescript-eslint/eslint-plugin": "^7.1.1",

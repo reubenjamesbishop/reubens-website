@@ -9,7 +9,7 @@ const CATCH_OFFSET = { x: 455, y: -45 };
 const CATCH_DISTANCE = 350;
 const HOLD_DURATION = 4500;
 
-export default function MoonPortrait() {
+export default function MoonPortrait({ onCatch }: { onCatch?: () => void }) {
   const [moon, setMoon] = useState({ x: 0, y: 0 });
   const [moonPhase, setMoonPhase] = useState<"idle" | "dragging" | "caught">("idle");
   const drag = useRef<{ x: number; y: number; offsetX: number; offsetY: number } | null>(null);
@@ -23,6 +23,7 @@ export default function MoonPortrait() {
     clearTimeout(resetMoon.current);
     setMoon(CATCH_OFFSET);
     setMoonPhase("caught");
+    onCatch?.();
     resetMoon.current = setTimeout(() => { setMoon({ x: 0, y: 0 }); setMoonPhase("idle"); }, HOLD_DURATION);
   };
   return (

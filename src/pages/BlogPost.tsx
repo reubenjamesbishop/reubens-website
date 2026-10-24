@@ -19,7 +19,7 @@ export default function BlogPost() {
 
   if (!post) {
     return (
-      <Container size="sm" py="xl">
+      <Container className="blog-page" size="sm" py="xl">
         <Space h="xl" />
         <Title order={2}>Post not found</Title>
         <Space h="md" />
@@ -27,7 +27,7 @@ export default function BlogPost() {
           component={Link}
           to="/"
           variant="outline"
-          color="black"
+          color="gray"
           radius="xl"
           leftSection={<IconArrowLeft size={18} />}
         >
@@ -38,13 +38,13 @@ export default function BlogPost() {
   }
 
   return (
-    <Container size="sm" py="xl" px="xl">
+    <Container className="blog-page" size="sm" py="xl" px="xl">
       <Space h="xl" />
       <Button
         component={Link}
         to="/"
         variant="subtle"
-        color="dark"
+        color="gray"
         radius="xl"
         leftSection={<IconArrowLeft size={18} />}
         px={0}

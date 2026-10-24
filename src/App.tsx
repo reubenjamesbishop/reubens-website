@@ -1,4 +1,5 @@
-import { AppShell, MantineProvider } from "@mantine/core";
+import { useState } from "react";
+import { AppShell, MantineProvider, Modal } from "@mantine/core";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import BlogPost from "./pages/BlogPost";
@@ -6,14 +7,16 @@ import BlogPost from "./pages/BlogPost";
 import "@mantine/core/styles.css";
 
 function App() {
+  const [night, setNight] = useState(() => { try { return localStorage.getItem("portfolio-theme") === "dark"; } catch { return false; } });
+  const toggleTheme = () => setNight(value => { try { localStorage.setItem("portfolio-theme", value ? "light" : "dark"); } catch { /* Storage is optional. */ } return !value; });
   return (
-    <MantineProvider theme={{ fontFamily: "Inter, sans-serif" }}>
+    <MantineProvider forceColorScheme={night ? "dark" : "light"} theme={{ fontFamily: "Inter, -apple-system, BlinkMacSystemFont, sans-serif", primaryColor: "dark", defaultRadius: "sm", components: { Modal: Modal.extend({ styles: { title: { textTransform: "lowercase" }, content: { backgroundColor: night ? "#202329" : "#FFFBF4" }, header: { backgroundColor: night ? "#202329" : "#FFFBF4" }, body: { backgroundColor: night ? "#202329" : "#FFFBF4" } } }) } }}>
       <HashRouter>
         <AppShell>
           <AppShell.Header>{/* <HeaderMenu /> */}</AppShell.Header>
-          <AppShell.Main style={{ background: "#FFFBF4" }}>
+          <AppShell.Main style={{ background: night ? "#171a20" : "#FFFBF4" }}>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home night={night} toggleTheme={toggleTheme} />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
             </Routes>
           </AppShell.Main>

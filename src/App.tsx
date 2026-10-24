@@ -7,7 +7,7 @@ import "@mantine/core/styles.css";
 
 function App() {
   return (
-    <MantineProvider theme={{ fontFamily: "Inter, sans-serif" }}>
+    <MantineProvider theme={{ fontFamily: "Inter, -apple-system, BlinkMacSystemFont, sans-serif", primaryColor: "dark", defaultRadius: "sm" }}>
       <HashRouter>
         <AppShell>
           <AppShell.Header>{/* <HeaderMenu /> */}</AppShell.Header>

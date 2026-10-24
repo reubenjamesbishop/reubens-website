@@ -13,9 +13,9 @@ export default function SectionTitle({
 }: SectionTitleProps) {
   return (
     <Grid justify="center">
-      <Grid.Col span={{ base: 12, md: 8 }}>
+      <Grid.Col span={{ base: 12, md: image ? 8 : 12 }}>
         <Stack>
-          <Title order={1} ta={{ base: "center", md: "left" }}>
+          <Title order={2} ta={{ base: "center", md: "left" }}>
             {title}
           </Title>
           {subtitle && (
@@ -25,13 +25,13 @@ export default function SectionTitle({
           )}
         </Stack>
       </Grid.Col>
-      <Grid.Col span={{ base: 12, md: 4 }}>
+      {image && <Grid.Col span={{ base: 12, md: 4 }}>
         <Center>
           <Box style={{ maxWidth: "200px" }}>
-            <Image src={image} />
+            <Image src={image} alt="" />
           </Box>
         </Center>
-      </Grid.Col>
+      </Grid.Col>}
     </Grid>
   );
 }
